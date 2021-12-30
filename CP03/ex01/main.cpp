@@ -1,9 +1,14 @@
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+
 
 int main(void)
 {
-	ClapTrap test("lala");
-	test.attack("pop");
-	test.takeDamage(100);
-	test.beRepaired(900000);
+	
+	ClapTrap *p;
+	ScavTrap *l = new ScavTrap("plot");
+
+	p = l;
+	std::cout << p << "kdlwkdpw";
+	
 }
