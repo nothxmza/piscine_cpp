@@ -13,6 +13,7 @@ class ClapTrap
 		void beRepaired(unsigned int amount);
 	protected :
 		std::string name;
+		int i;
 
 	private :
 		int Hitpoints;

@@ -14,6 +14,7 @@ class ClapTrap
 		void attack(std::string const & target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
+		void test();
 
 	protected :
 			std::string name;
@@ -24,5 +25,7 @@ class ClapTrap
 		int Attack_damage;
 		
 };
+
+//std::ostream&	operator<<(std::ostream& ofs, ClapTrap const & rhs);
 
 #endif

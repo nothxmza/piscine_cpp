@@ -5,11 +5,11 @@ ScavTrap::ScavTrap() : ClapTrap()
 	std::cout << "constructor called" << std::endl;
 }
 
-/*ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
     this->name = name;
     std::cout << this->name << std::endl;
-}*/
+}
 
 ScavTrap::~ScavTrap()
 {

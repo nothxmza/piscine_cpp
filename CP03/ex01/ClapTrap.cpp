@@ -47,3 +47,17 @@ ClapTrap & ClapTrap::operator=(ClapTrap const & rhs)
     this->name = rhs.name;
     return *this;
 }
+
+
+void ClapTrap::test()
+{
+	std::cout << Hitpoints;
+}
+
+
+
+/*std::ostream&	operator<<(std::ostream& ofs, ClapTrap const & rhs)
+{
+	std::cout << rhs.name;
+	return (ofs);
+}*/

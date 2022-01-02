@@ -5,10 +5,8 @@
 int main(void)
 {
 	
-	ClapTrap *p;
-	ScavTrap *l = new ScavTrap("plot");
-
-	p = l;
-	std::cout << p << "kdlwkdpw";
+	ClapTrap t("lala");
+	
+	
 	
 }
