@@ -14,7 +14,13 @@ class ClapTrap
 		void attack(std::string const & target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
-		void test();
+		int getHitpoints(void);
+		int getEnergy_points(void);
+		int getAttack_damage(void);
+		void setHitpoints(int n);
+		void setEnergy_points(int n);
+		void setAttack_damage(int n);
+		std::string getName();
 
 	protected :
 			std::string name;
@@ -25,7 +31,5 @@ class ClapTrap
 		int Attack_damage;
 		
 };
-
-//std::ostream&	operator<<(std::ostream& ofs, ClapTrap const & rhs);
 
 #endif

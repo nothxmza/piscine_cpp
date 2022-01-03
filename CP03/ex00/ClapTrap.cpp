@@ -21,6 +21,13 @@ ClapTrap::ClapTrap(ClapTrap const & src)
     return;
 }
 
+ClapTrap & ClapTrap::operator=(ClapTrap const & rhs)
+{
+    std::cout << "ClapTrap Assignation operator called" << std::endl;
+    this->name = rhs.name;
+    return *this;
+}
+
 ClapTrap::~ClapTrap()
 {
 	std::cout << "destructor called" << std::endl;
@@ -28,22 +35,20 @@ ClapTrap::~ClapTrap()
 
 void ClapTrap::attack(std::string const & target)
 {
-	std::cout << "ClapTrap " << this->name << " attack " << target << " causing " << this->Hitpoints << std::endl;
+	std::cout << "ClapTrap " << getName() << " attack " << target << " causing " << this->Hitpoints << "points of damage!" << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-	std::cout << "ClapTrap " << this->name << " a pris " << amount << " de degat" << std::endl;
+	std::cout << "ClapTrap " << getName() << " a pris " << amount << " de degat" << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	std::cout << "ClapTrap " << this->name << " a recupere " << amount << " de hp" << std::endl;
+	std::cout << "ClapTrap " << getName() << " a recupere " << amount << " hp" << std::endl;
 }
 
-ClapTrap & ClapTrap::operator=(ClapTrap const & rhs)
+std::string ClapTrap::getName()
 {
-    std::cout << "Assignation operator called" << std::endl;
-    this->name = rhs.name;
-    return *this;
+	return this->name;
 }
