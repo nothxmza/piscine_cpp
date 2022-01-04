@@ -25,7 +25,7 @@ FragTrap::FragTrap(FragTrap const & src)
 
 FragTrap::~FragTrap()
 {
-	std::cout <<"FragTrap destructor called" << std::endl;
+	std::cout << "FragTrap destructor called" << std::endl;
 }
 
 FragTrap & FragTrap::operator=(FragTrap const & rhs)

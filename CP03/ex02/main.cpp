@@ -2,5 +2,7 @@
 
 int main()
 {
-    FragTrap t;
+    FragTrap t("lala");
+    t.testattack("pol");
+    t.highFivesGuys();
 }
