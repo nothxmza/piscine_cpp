@@ -1,6 +1,6 @@
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(void)
+DiamondTrap::DiamondTrap(void) : ScavTrap(), FragTrap()
 {
 	std::cout << "diamond default constrcutor called" << std::endl;
 	std::cout << "FragTrap Hitpoint: " <<FragTrap::getHitpoints() << "; Scavtrap Energy_points: " << ScavTrap::getEnergy_points() << "; Fragtrap attack damage : " << FragTrap::getAttack_damage() << "; " <<  std::endl;
@@ -8,10 +8,12 @@ DiamondTrap::DiamondTrap(void)
 	
 }
 
-DiamondTrap::DiamondTrap(std::string name)
+DiamondTrap::DiamondTrap(std::string name) : ScavTrap(name), FragTrap(name)
 {
-	this->name = name;
 	std::cout << "diamond cosntructor called" << std::endl;
+	this->name = name;
+	ClapTrap::setName(name + "_clap_name");
+	
 
 }
 DiamondTrap::DiamondTrap(DiamondTrap const & src)
@@ -32,7 +34,12 @@ DiamondTrap::~DiamondTrap()
 	std::cout << "diamond destrcutor called" << std::endl;
 }
 
+void	DiamondTrap::attack(std::string const & target)
+{
+	ScavTrap::attack(target);
+}
+
 void DiamondTrap::WhoAmI()
 {
-	std:: cout << this->name <<  ClapTrap::name << std::endl;
+	std:: cout << this->name <<  ClapTrap::getName() << std::endl;
 }

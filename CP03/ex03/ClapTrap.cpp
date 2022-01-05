@@ -81,6 +81,12 @@ int ClapTrap::getAttack_damage(void)
 	return this->Attack_damage;
 }
 
+void	ClapTrap::setName(std::string name) 
+{
+	std::cout << "setName = " << name << std::endl;
+	this->name = name;
+}
+
 std::string ClapTrap::getName()
 {
 	return this->name;
