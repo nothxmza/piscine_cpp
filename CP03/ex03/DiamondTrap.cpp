@@ -12,7 +12,6 @@ DiamondTrap::DiamondTrap(std::string name) : ScavTrap(name), FragTrap(name)
 {
 	std::cout << "diamond cosntructor called" << std::endl;
 	this->name = name;
-	ClapTrap::setName(name + "_clap_name");
 	
 
 }
