@@ -10,34 +10,44 @@ FragTrap::FragTrap(void) : ClapTrap()
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
-	std::cout << "Fragtrap construcxtor called" << std::endl;
+	std::cout << "Fragtrap constructor called" << std::endl;
 	this->setHitpoints(100);
 	this->setEnergy_points(100);
 	this->setAttack_damage(30);
 }
 
-FragTrap::FragTrap(FragTrap const & src)
+/*FragTrap::FragTrap(FragTrap const & src)
 {
 	std::cout << "Copy constructor  frag called" << std::endl;
 	*this = src;
 	return;
-}
+}*/
 
 FragTrap::~FragTrap()
 {
-	std::cout << "FragTrap destructor called" << std::endl;
+	std::cout <<"FragTrap destructor called" << std::endl;
 }
 
-FragTrap & FragTrap::operator=(FragTrap const & rhs)
+/*FragTrap & FragTrap::operator=(FragTrap const & rhs)
 {
 	std::cout << "Assignation operator called" << std::endl;
 	this->name = rhs.name;
 	return *this;
+}*/
+
+void FragTrap::attack(std::string const & target)
+{
+	std::cout << "FragTrap " << getName() << " attack " << target << " causing " << this->getHitpoints()<< " points of damage!"<< std::endl;
 }
 
-void FragTrap::testattack(std::string const & target)
+void FragTrap::takeDamage(unsigned int amount)
 {
-	std::cout << this->getName() << " inflige " << this->getAttack_damage() << " points de degat a " << target << std::endl;
+	std::cout << "FragTrap " << getName() << " a pris " << amount << " de degat" << std::endl;
+}
+
+void FragTrap::beRepaired(unsigned int amount)
+{
+	std::cout << "FragTrap " << getName() << " a recupere " << amount << " hp" << std::endl;
 }
 
 void FragTrap::highFivesGuys(void)

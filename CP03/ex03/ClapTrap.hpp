@@ -21,6 +21,7 @@ class ClapTrap
 		void setEnergy_points(int n);
 		void setAttack_damage(int n);
 		std::string getName();
+		void test(void);
 		void	setName(std::string name);
 
 

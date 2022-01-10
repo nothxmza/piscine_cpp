@@ -91,3 +91,8 @@ std::string ClapTrap::getName()
 {
 	return this->name;
 }
+
+void ClapTrap::test()
+{
+    std::cout <<  getName() << " a " << this->getEnergy_points()  << " Energy point" << " et " << this->getAttack_damage() << " attack damage "  << std::endl;
+}
