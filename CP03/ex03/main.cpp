@@ -3,8 +3,5 @@
 int main()
 {
 	DiamondTrap t("pppppppp");
-	ScavTrap x("nom");
-	t.ScavTrap::attack("lala");
-	x.attack("waaa");
-	t.WhoAmI();
+	t.attack("lala");
 }

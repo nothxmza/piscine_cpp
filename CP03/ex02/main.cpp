@@ -1,8 +1,11 @@
 #include "Fragtrap.hpp"
+#include "ScavTrap.hpp"
 
 int main()
 {
     FragTrap t("lala");
-    t.testattack("pol");
-    t.highFivesGuys();
+    ScavTrap l("OG");
+    t.test();
+    l.test();
+
 }
