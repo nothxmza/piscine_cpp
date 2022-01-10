@@ -2,18 +2,21 @@
 
 ClapTrap::ClapTrap(void)
 {
+	std::cout << "ClapTrap default constructor called" << std::endl;
 	this->Hitpoints = 10;
 	this->Energy_points = 10;
 	this->Attack_damage = 0;
 }
+
 ClapTrap::ClapTrap(std::string name)
 {
+	std::cout << "ClapTrap constructor called" <<  this->name << std::endl;
 	this->name = name;
 	this->Hitpoints = 10;
 	this->Energy_points = 10;
 	this->Attack_damage = 0;
-	std::cout << "pret pour le combat" <<" "<<  this->name << std::endl;
 }
+
 ClapTrap::ClapTrap(ClapTrap const & src)
 {
     std::cout << "Copy constructor called" <<std::endl;
@@ -35,20 +38,15 @@ ClapTrap::~ClapTrap()
 
 void ClapTrap::attack(std::string const & target)
 {
-	std::cout << "ClapTrap " << getName() << " attack " << target << " causing " << this->Hitpoints << "points of damage!" << std::endl;
+	std::cout << "ClapTrap " << this->name << " attack " << target << " causing " << this->Hitpoints << " points of damage!" << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-	std::cout << "ClapTrap " << getName() << " a pris " << amount << " de degat" << std::endl;
+	std::cout << "ClapTrap " << this->name << " a pris " << amount << " de degat" << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	std::cout << "ClapTrap " << getName() << " a recupere " << amount << " hp" << std::endl;
-}
-
-std::string ClapTrap::getName()
-{
-	return this->name;
+	std::cout << "ClapTrap " << this->name << " a recupere " << amount << " hp" << " et " << this->Energy_points << " Energy_points"<< std::endl;
 }
