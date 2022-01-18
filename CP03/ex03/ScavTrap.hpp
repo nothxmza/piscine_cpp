@@ -5,7 +5,7 @@
 #include "ClapTrap.hpp"
 
 
-class ScavTrap : public ClapTrap
+class ScavTrap : public virtual ClapTrap
 {
 	public:
 		ScavTrap(void);
@@ -17,6 +17,16 @@ class ScavTrap : public ClapTrap
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 		void guardGate();
+
+		int getHitpoints(void) const;
+		int getEnergy_points(void) const;
+		int getAttack_damage(void)const;
+		std::string	getName() const;
+
+	private:
+		int Hitpoints;
+		int Energy_points;
+		int Attack_damage;
 };
 
 #endif

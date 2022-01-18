@@ -54,6 +54,8 @@ void FragTrap::highFivesGuys(void)
 {
 	std::string rep;
 	std::cout << " you want high fives" << std::endl;
+	std::cout << " yes/no: ";
+
 	std::cin >> rep;
 	if(rep == "yes")
 		std::cout << "yeah go high fives" <<std::endl;

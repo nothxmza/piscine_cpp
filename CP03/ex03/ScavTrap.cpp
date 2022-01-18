@@ -3,17 +3,18 @@
 ScavTrap::ScavTrap() : ClapTrap()
 {
 	std::cout << "ScavTrap default constructor called" << std::endl;
-    this->setHitpoints(100);
-    this->setEnergy_points(50);
-    this->setAttack_damage(20);
+    this->Hitpoints = 100;
+    this->Energy_points= 50;
+    this->Attack_damage = 20;
 }
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
+ScavTrap::ScavTrap(std::string name)
 {
 	std::cout << "ScavTrap  constructor called" << std::endl;
-    this->setHitpoints(100);
-    this->setEnergy_points(50);
-    this->setAttack_damage(20);
+    this->setName(name);
+    this->Hitpoints = 100;
+    this->Energy_points= 50;
+    this->Attack_damage = 20;
 }
 
 ScavTrap::~ScavTrap()
@@ -36,7 +37,7 @@ ScavTrap & ScavTrap::operator=(ScavTrap const & rhs)
 
 void ScavTrap::attack(std::string const & target)
 {
-	std::cout << "ScavTrap " << getName() << " attack " << target << " causing " << this->getHitpoints()<< " points of damage!"<< std::endl;
+	std::cout << "ScavTrap " << getName() << " attack " << target << " causing " << this->getAttack_damage()<< " points of damage!"<< std::endl;
 }
 
 void ScavTrap::takeDamage(unsigned int amount)
@@ -51,5 +52,24 @@ void ScavTrap::beRepaired(unsigned int amount)
 
 void ScavTrap::guardGate()
 {
-    std::cout << "ScavTrap have enterred in Gate keeper mode." << std::endl;
+    std::cout << this->getName() << "ScavTrap have enterred in Gate keeper mode." << std::endl;
+}
+
+int ScavTrap::getHitpoints(void) const
+{
+	return this->Hitpoints;
+}
+
+int ScavTrap::getEnergy_points(void) const
+{
+	return this->Energy_points;
+}
+
+int ScavTrap::getAttack_damage(void) const
+{
+	return this->Attack_damage;
+}
+std::string	ScavTrap::getName() const 
+{
+	return this->name;
 }

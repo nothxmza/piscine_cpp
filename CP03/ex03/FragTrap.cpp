@@ -1,19 +1,20 @@
-#include "Fragtrap.hpp"
+#include "FragTrap.hpp"
 
-FragTrap::FragTrap(void) : ClapTrap()
+FragTrap::FragTrap(void)
 {
 	std::cout << "default constructor Frag called" << std::endl;
-	this->setHitpoints(100);
-	this->setEnergy_points(100);
-	this->setAttack_damage(30);
+	this->Hitpoints = 100;
+    this->Energy_points= 100;
+    this->Attack_damage = 30;
 }
 
-FragTrap::FragTrap(std::string name) : ClapTrap(name)
+FragTrap::FragTrap(std::string name)
 {
 	std::cout << "Fragtrap constructor called" << std::endl;
-	this->setHitpoints(100);
-	this->setEnergy_points(100);
-	this->setAttack_damage(30);
+	this->setName(name);
+	this->Hitpoints = 100;
+    this->Energy_points= 100;
+    this->Attack_damage = 30;
 }
 
 /*FragTrap::FragTrap(FragTrap const & src)
@@ -54,9 +55,30 @@ void FragTrap::highFivesGuys(void)
 {
 	std::string rep;
 	std::cout << " you want high fives" << std::endl;
+	std::cout << " yes/no: ";
+	
 	std::cin >> rep;
 	if(rep == "yes")
 		std::cout << "yeah go high fives" <<std::endl;
 	else
 		std::cout << "i dont want" << std::endl;
+}
+int FragTrap::getHitpoints(void) const
+{
+	return this->Hitpoints;
+}
+
+int FragTrap::getEnergy_points(void) const
+{
+	return this->Energy_points;
+}
+
+int FragTrap::getAttack_damage(void) const
+{
+	return this->Attack_damage;
+}
+
+std::string	FragTrap::getName() const 
+{
+	return this->name;
 }
