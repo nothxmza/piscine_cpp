@@ -2,7 +2,7 @@
 
 Dog::Dog(void) : Animal(){
 
-    std::cout << "default Dog constructor called" << std::endl;
+    std::cout << "Dog default constructor called" << std::endl;
     type = "Dog";
     return;
 }
@@ -25,7 +25,7 @@ Dog & Dog::operator=(Dog const & rhs){
 
 Dog::~Dog(void){
 
-    std::cout << "default Dog destrcutor called" << std::endl;
+    std::cout << "Dog destrcutor called" << std::endl;
     return;
 }
 

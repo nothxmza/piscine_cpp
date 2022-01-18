@@ -3,7 +3,7 @@
 
 Cat::Cat(void) : Animal(){
 
-    std::cout << "default Cat constructor called" << std::endl;
+    std::cout << "Cat default constructor called" << std::endl;
     type = "cat";
     return;
 }
@@ -27,7 +27,7 @@ Cat & Cat::operator=(Cat const & rhs){
 
 Cat::~Cat(void){
 
-    std::cout << "default Cat destrcutor called" << std::endl;
+    std::cout << "Cat destrcutor called" << std::endl;
     return;
 }
 
