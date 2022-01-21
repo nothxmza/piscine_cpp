@@ -3,13 +3,13 @@
 
 Bureaucrat::Bureaucrat(void){
 
-    std::cout <<"Bureaucrat default constructor called" << std::endl;
+   // std::cout <<"Bureaucrat default constructor called" << std::endl;
     this->grade = 10;
 }
 
 Bureaucrat::Bureaucrat(std::string const name,int note) : name(name){
 
-	std::cout <<"Bureaucrat constructor called" << std::endl;
+	//std::cout <<"Bureaucrat constructor called" << std::endl;
     if(note < 1){
         throw Bureaucrat::GradeTooHighException();
     }
@@ -21,7 +21,8 @@ Bureaucrat::Bureaucrat(std::string const name,int note) : name(name){
 
 Bureaucrat::~Bureaucrat(void){
 
-    std::cout <<"Bureaucrat destructor called" << std::endl;
+   // std::cout <<"Bureaucrat destructor called" << std::endl;
+   ;
 }
 
 void Bureaucrat::incrementer(int nbr){
@@ -60,6 +61,11 @@ void Bureaucrat::signForm(Form  & name){
 	else if(name.getSigne() == 0){
 		std::cout << this->getName() << " cannot sign because " << this->getGrade() << " is to low" << std::endl;
 	}
+}
+
+void Bureaucrat::executeForm(Form const & form){
+
+    form.executeform();
 }
 
 

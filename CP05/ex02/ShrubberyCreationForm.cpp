@@ -9,11 +9,11 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form("kl",145
 	this->target = target;
 }
 
-std::string ShrubberyCreationForm::getTarget(void){
+std::string ShrubberyCreationForm::getTarget(void)const{
 	return this->target;
 }
 
-void ShrubberyCreationForm::executeform(void){
+void ShrubberyCreationForm::executeform(void)const{
 
 	std::ofstream file;
 	std::string s1 = this->getTarget();
@@ -28,7 +28,30 @@ file << "     	   _-_     " << std::endl
    	<< "       ~  \\ //  ~		"<<std::endl
   	<< "    _- -   | | _- _		"<<std::endl
 	<< "      _ -  | |   -_		"<<std::endl
+    << "          // \\			"<<std::endl
+	<< "     	   _-_     " << std::endl
+   	<< "	    /~~   ~~\\  "<< std::endl
+	<< "	 /~~         ~~\\     "<<std::endl
+	<< "	 {               }     "<<std::endl
+    << "    \\  _-     -_  /		"<<std::endl
+   	<< "       ~  \\ //  ~		"<<std::endl
+  	<< "    _- -   | | _- _		"<<std::endl
+	<< "      _ -  | |   -_		"<<std::endl
+    << "          // \\			"<<std::endl
+	<< "     	   _-_     " << std::endl
+   	<< "	    /~~   ~~\\  "<< std::endl
+	<< "	 /~~         ~~\\     "<<std::endl
+	<< "	 {               }     "<<std::endl
+    << "    \\  _-     -_  /		"<<std::endl
+   	<< "       ~  \\ //  ~		"<<std::endl
+  	<< "    _- -   | | _- _		"<<std::endl
+	<< "      _ -  | |   -_		"<<std::endl
     << "          // \\			"<<std::endl;
 
 file.close();
 }
+
+ShrubberyCreationForm::~ShrubberyCreationForm(void){
+	;
+}
+

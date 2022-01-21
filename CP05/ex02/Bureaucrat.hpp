@@ -11,13 +11,15 @@ class Bureaucrat {
     public:
         Bureaucrat(void);
 		Bureaucrat(std::string const name,int note);
-        ~Bureaucrat(void);
+        virtual ~Bureaucrat(void);
 
 		void incrementer(int nbr);
 		void decrementer(int nbr);
 		std::string getName(void) const;
 		int getGrade(void)const;
 		void signForm(Form  & name);
+		void executeForm(Form const & form);
+
 		class GradeTooHighException : public std::exception
 		{
 			public:

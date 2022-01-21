@@ -5,13 +5,11 @@ Form::Form(void): gradeS(1),gradeE(5){
 	;
 }
 
-Form::~Form(void){
-	std::cout <<"destructor called" << std::endl;
-}
+Form::~Form(void){};
 
-Form::Form(std::string const name,int const gradeS,int const gradeE) : name(name),gradeS(gradeS),gradeE(gradeE){
+Form::Form(std::string const name,int const gradeS,int const gradeE) : gradeS(gradeS),gradeE(gradeE),name(name){
 
-	std::cout <<"constrcutor called" << std::endl;
+	//std::cout <<"constrcutor called" << std::endl;
 	if(gradeS < 1 || gradeE < 1){
 		throw Form::GradeTooHighException();
 	}
@@ -37,6 +35,18 @@ Form& Form::beSigned(Bureaucrat  & name){
 
 }
 
+void Form::MethodeExec(Bureaucrat const & executor)const{
+
+	if(getSigne() == 0)
+		throw Form::Nosigned();
+	if(getGradeS() < executor.getGrade())
+		throw Form::GradeTooLowException();
+	else{
+
+		this->executeform();
+	}
+}
+
 std::string Form::getName(void) const{
 	return this->name;
 }
@@ -55,17 +65,17 @@ bool Form::getSigne(void) const{
 
 std::ostream & operator<<(std::ostream & o, Form const & rhs){
 
-		std::cout <<"name ";
-		o << rhs.getName();
-		if(rhs.getSigne() == 1){
-			std::cout <<" signed ";
-		}
-		else if(rhs.getSigne() == 0){
-			std::cout <<" non signee ";
-		}
-		std::cout <<"grade requis pour le signer ";
-		o << rhs.getGradeS();
-		std::cout <<" grade requis pour l'executer  ";
-		o << rhs.getGradeE() << "."<< std::endl;
-		return(o);
+	std::cout <<"name ";
+	o << rhs.getName();
+	if(rhs.getSigne() == 1){
+		std::cout <<" signed ";
+	}
+	else if(rhs.getSigne() == 0){
+		std::cout <<" non signee ";
+	}
+	std::cout <<"grade requis pour le signer ";
+	o << rhs.getGradeS();
+	std::cout <<" grade requis pour l'executer  ";
+	o << rhs.getGradeE() << "."<< std::endl;
+	return(o);
 }

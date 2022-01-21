@@ -9,9 +9,9 @@ class  ShrubberyCreationForm : public Form{
 		public:
 			ShrubberyCreationForm(void);
 			ShrubberyCreationForm(std::string target);
-			//~ShrubberyCreationForm(void);
-			void executeform(void);
-			std::string getTarget(void);
+			virtual ~ShrubberyCreationForm(void);
+			virtual void executeform(void) const;
+			std::string getTarget(void)const;
 
 		private:
 			std::string target;

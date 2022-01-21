@@ -10,18 +10,21 @@ class Form {
 		public:
 			Form(void);
 			Form(std::string const name,int const gradeS,int const gradeE);
-			~Form(void);
+			virtual ~Form(void);
 			std::string getName() const;
 			int getGradeS() const;
 			int getGradeE() const;
 			bool getSigne() const;
 			Form& beSigned(Bureaucrat  & name);
+			void MethodeExec(Bureaucrat const & executor)const;
+			virtual void executeform(void) const = 0 ;
+
 		class GradeTooHighException : public std::exception
 		{
 			public:
 				virtual const char * what () const throw ()
 				{
-					return ("Grade is too high");
+					return ("Grade is too high.");
 				}
 		};
 		class GradeTooLowException : public std::exception
@@ -29,9 +32,18 @@ class Form {
 			public:
 				virtual const char * what () const throw ()
 				{
-					return("Grade is too low");
+					return("Grade is too low.");
 				}
 		};
+		class Nosigned : std::exception
+		{
+			public:
+				virtual const char * what () const throw ()
+				{
+					return("No signed.");
+				}
+		};
+
 		private:
 			int const gradeS;
 			int const gradeE;
