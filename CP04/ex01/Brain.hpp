@@ -8,14 +8,18 @@ class Brain{
 
 	public:
 		Brain(void);
+		Brain(std::string idea);
+		Brain(Brain const & src);
+		Brain & operator=(Brain const & rhs);
 		~Brain(void);
 
 
 	private:
-	std::string neard[100];
+	std::string ideas[100];
 
 
 };
+
 
 
 #endif
