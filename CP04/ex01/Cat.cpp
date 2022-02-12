@@ -5,6 +5,7 @@ Cat::Cat(void) : Animal(){
 
     std::cout << "Cat default constructor called" << std::endl;
     type = "cat";
+    this->brain = new Brain();
     return;
 }
 
@@ -28,6 +29,8 @@ Cat & Cat::operator=(Cat const & rhs){
 Cat::~Cat(void){
 
     std::cout << "Cat destrcutor called" << std::endl;
+    delete this->brain; 
+
     return;
 }
 

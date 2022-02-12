@@ -35,7 +35,7 @@ class Form {
 					return("Grade is too low.");
 				}
 		};
-		class Nosigned : std::exception
+		class Nosigned : public std::exception
 		{
 			public:
 				virtual const char * what () const throw ()
