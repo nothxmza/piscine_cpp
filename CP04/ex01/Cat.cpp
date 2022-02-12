@@ -19,12 +19,19 @@ Cat::Cat(Cat const & src) {
 
 Cat & Cat::operator=(Cat const & rhs){
 
-    std::cout << "Assignment operator called" << std::endl;
-    this->type = rhs.getType();
+    this->brain = new Brain(*(rhs.brain));
+	this->setType(rhs.getType());
+	return (*this);
 
-    return *this;
 }
 
+void		Cat::setType(std::string type) {
+	this->type = type;
+}
+
+std::string	Cat::getType() const {
+	return (this->type);
+}
 
 Cat::~Cat(void){
 
