@@ -3,7 +3,7 @@
 
 Cat::Cat(void) : Animal(){
 
-    std::cout << "Cat default constructor called" << std::endl;
+    std::cout << "Default constructor called : CAT" << std::endl;
     type = "cat";
     this->brain = new Brain();
     return;
@@ -19,7 +19,7 @@ Cat::Cat(Cat const & src) {
 
 Cat & Cat::operator=(Cat const & rhs){
 
-    std::cout << "operator CAT called" << std::endl;
+    std::cout << "operator called : CAT" << std::endl;
     this->brain = new Brain(*(rhs.brain));
 	this->type =rhs.getType();
 	return (*this);
@@ -32,7 +32,7 @@ std::string	Cat::getType() const {
 
 Cat::~Cat(void){
 
-    std::cout << "Cat destrcutor called" << std::endl;
+    std::cout << "Destrcutor called : CAT" << std::endl;
     delete this->brain; 
 
     return;

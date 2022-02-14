@@ -2,7 +2,7 @@
 
 Dog::Dog(void) : Animal(){
 
-    std::cout << "Dog default constructor called" << std::endl;
+    std::cout << "Default constructor called : DOG" << std::endl;
     type = "Dog";
     this->brain = new Brain();
     return;
@@ -10,7 +10,7 @@ Dog::Dog(void) : Animal(){
 
 Dog::Dog(Dog const & src) {
 
-    std::cout << "Copy constructor called" << std::endl;
+    std::cout << "Copy constructor called : DOG" << std::endl;
     *this = src;
 
     return;
@@ -18,7 +18,7 @@ Dog::Dog(Dog const & src) {
 
 Dog & Dog::operator=(Dog const & rhs){
 
-    std::cout << "Assignment operator called" << std::endl;
+    std::cout << "Assignment operator called : DOG" << std::endl;
     this->brain = new Brain(*(rhs.brain));
     this->type = rhs.getType();
 
@@ -27,7 +27,7 @@ Dog & Dog::operator=(Dog const & rhs){
 
 Dog::~Dog(void){
 
-    std::cout << "Dog destrcutor called" << std::endl;
+    std::cout << "Destrcutor called : DOG" << std::endl;
     delete this->brain;
     return;
 }
