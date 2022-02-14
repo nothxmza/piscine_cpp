@@ -25,7 +25,7 @@ Dog & Dog::operator=(Dog const & rhs){
 
 Dog::~Dog(void){
 
-    std::cout << "default  destrcutor called : DOG" << std::endl;
+    std::cout << "default Dog destrcutor called : DOG" << std::endl;
     return;
 }
 
