@@ -7,10 +7,10 @@ class Dog : public Animal{
 
     public:
         Dog(void);
-        ~Dog(void);
+       virtual ~Dog(void);
         Dog(Dog const & src);
 		Dog & operator=(Dog const & rhs);
-        void makeSound(void) const;
+        virtual void makeSound(void) const;
 
 };
 
