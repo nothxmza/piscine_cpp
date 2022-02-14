@@ -1,9 +1,8 @@
 #include "Cat.hpp"
 
-
 Cat::Cat(void) : Animal(){
 
-    std::cout << "default constructor called : CAT" << std::endl;
+    std::cout << "default Cat constructor called : CAT" << std::endl;
     type = "cat";
     return;
 }
@@ -27,7 +26,7 @@ Cat & Cat::operator=(Cat const & rhs){
 
 Cat::~Cat(void){
 
-    std::cout << "default destrcutor called : CAT" << std::endl;
+    std::cout << "default Cat destrcutor called : CAT" << std::endl;
     return;
 }
 
