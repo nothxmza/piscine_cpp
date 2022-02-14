@@ -17,7 +17,7 @@ Animal::Animal(Animal const & src) {
 
 Animal::~Animal(void){
 
-    std::cout << "default destructor called : ANIMAL" << std::endl;
+    std::cout << "default destructor called: ANIMAL" << std::endl;
     
     return;
 }
@@ -29,7 +29,7 @@ std::string Animal::getType(void) const{
 
 Animal & Animal::operator=(Animal const & rhs){
 
-    std::cout << "Assignment operator called : ANIMAL" << std::endl;
+    std::cout << "Assignment operator called: ANIMAL" << std::endl;
     this->type = rhs.getType();
 
     return *this;
