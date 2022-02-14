@@ -19,6 +19,7 @@ Dog::Dog(Dog const & src) {
 Dog & Dog::operator=(Dog const & rhs){
 
     std::cout << "Assignment operator called" << std::endl;
+    this->brain = new Brain(*(rhs.brain));
     this->type = rhs.getType();
 
     return *this;

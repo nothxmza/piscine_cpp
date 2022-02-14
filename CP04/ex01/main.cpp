@@ -7,9 +7,17 @@
 
 int main(void)
 {
-    const Cat*	a = new Cat();
-	const Cat	b(*a);
-
-	b.makeSound();
-	delete a;
+	const Animal*	obj[4];
+	for (int i = 0 ; i < 2 ; i++)
+	{
+		obj[i] = new Dog();
+	}
+	for (int i = 2 ; i < 4 ; i++)
+	{
+		obj[i] = new Cat();
+	}
+	for (int i = 0 ; i < 4 ; i++)
+	{
+		delete obj[i];
+	}
 }

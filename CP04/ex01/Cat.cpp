@@ -11,7 +11,7 @@ Cat::Cat(void) : Animal(){
 
 Cat::Cat(Cat const & src) {
 
-    std::cout << "Copy constructor called" << std::endl;
+    std::cout << "Copy constructor called : CAT" << std::endl;
     *this = src;
 
     return;
@@ -19,14 +19,11 @@ Cat::Cat(Cat const & src) {
 
 Cat & Cat::operator=(Cat const & rhs){
 
+    std::cout << "operator CAT called" << std::endl;
     this->brain = new Brain(*(rhs.brain));
-	this->setType(rhs.getType());
+	this->type =rhs.getType();
 	return (*this);
 
-}
-
-void		Cat::setType(std::string type) {
-	this->type = type;
 }
 
 std::string	Cat::getType() const {

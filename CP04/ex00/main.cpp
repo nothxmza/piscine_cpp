@@ -17,7 +17,7 @@ int main(void)
     meta->makeSound();
 
 /*const WrongAnimal* meta = new WrongAnimal();
-    const WrongAnimal* j = new Wrongcat();
+    const WrongAnimal* j = new WrongCat();
     std::cout << meta->getType() << " " << std::endl;
     std::cout << j->getType() << " " << std::endl;
     meta->makeSound();
