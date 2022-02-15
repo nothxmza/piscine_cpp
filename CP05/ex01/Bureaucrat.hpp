@@ -12,6 +12,8 @@ class Bureaucrat {
         Bureaucrat(void);
 		Bureaucrat(std::string const name,int note);
         ~Bureaucrat(void);
+		Bureaucrat(Bureaucrat const &src);
+		Bureaucrat & operator=(Bureaucrat const & rhs);
 
 		void incrementer(int nbr);
 		void decrementer(int nbr);

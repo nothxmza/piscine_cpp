@@ -4,13 +4,13 @@
 #include <iostream>
 #include <stdexcept>
 
-
-
 class Bureaucrat {
 
     public:
         Bureaucrat(void);
 		Bureaucrat(std::string const name,int note);
+		Bureaucrat(Bureaucrat const &src);
+		Bureaucrat & operator=(Bureaucrat const & rhs);
         ~Bureaucrat(void);
 
 		void incrementer(int nbr);

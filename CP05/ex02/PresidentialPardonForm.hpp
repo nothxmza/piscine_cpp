@@ -9,6 +9,8 @@ class PresidentialPardonForm : public Form{
 		public:
 			PresidentialPardonForm(void){};
 			PresidentialPardonForm(std::string target);
+			PresidentialPardonForm (PresidentialPardonForm  const &src);
+			PresidentialPardonForm  & operator=(PresidentialPardonForm  const & rhs);
 			virtual ~PresidentialPardonForm(void){};
 			std::string getTarget(void)const;
 			virtual void executeform(void) const;

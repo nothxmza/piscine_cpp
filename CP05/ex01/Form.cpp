@@ -9,7 +9,7 @@ Form::~Form(void){
 	std::cout <<"destructor called" << std::endl;
 }
 
-Form::Form(std::string const name,int const gradeS,int const gradeE) : name(name),gradeS(gradeS),gradeE(gradeE){
+Form::Form(std::string const name,int const gradeS,int const gradeE) :gradeS(gradeS),gradeE(gradeE), name(name){
 
 	std::cout <<"constrcutor called" << std::endl;
 	if(gradeS < 1 || gradeE < 1){
@@ -19,6 +19,18 @@ Form::Form(std::string const name,int const gradeS,int const gradeE) : name(name
 		throw Form::GradeTooLowException();
 	}
 	this->signe = 0;
+}
+
+Form::Form(Form const & src) :gradeS(1),gradeE(5){
+    
+    *this = src;
+    return;
+}
+
+Form & Form::operator=(Form const & rhs){
+
+	this->signe = rhs.getSigne();
+    return *this;
 }
 
 Form& Form::beSigned(Bureaucrat  & name){

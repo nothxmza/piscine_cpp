@@ -25,6 +25,17 @@ Bureaucrat::~Bureaucrat(void){
    ;
 }
 
+Bureaucrat::Bureaucrat(Bureaucrat const & src) {
+    
+    *this = src;
+    return;
+}
+
+Bureaucrat & Bureaucrat::operator=(Bureaucrat const & rhs){
+
+    this->grade = rhs.getGrade();
+    return *this;
+}
 void Bureaucrat::incrementer(int nbr){
 
     int j = this->grade - nbr;

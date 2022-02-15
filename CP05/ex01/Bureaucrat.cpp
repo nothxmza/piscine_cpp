@@ -19,6 +19,17 @@ Bureaucrat::Bureaucrat(std::string const name,int note) : name(name){
     this->grade = note;
 }
 
+Bureaucrat::Bureaucrat(Bureaucrat const & src) {
+    
+    *this = src;
+    return;
+}
+
+Bureaucrat & Bureaucrat::operator=(Bureaucrat const & rhs){
+
+    this->grade = rhs.getGrade();
+    return *this;
+}
 Bureaucrat::~Bureaucrat(void){
 
     std::cout <<"Bureaucrat destructor called" << std::endl;
@@ -58,7 +69,7 @@ void Bureaucrat::signForm(Form  & name){
 		std::cout << this->getName() << " signs " << name.getName() << std::endl;
 	}
 	else if(name.getSigne() == 0){
-		std::cout << this->getName() << " cannot sign because " << this->getGrade() << " is to low" << std::endl;
+		std::cout << this->getName() << "  couldn’t sign " << name.getName() << " because grade is to low" << std::endl;
 	}
 }
 

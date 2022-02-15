@@ -12,6 +12,17 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form("kl",145
 std::string ShrubberyCreationForm::getTarget(void)const{
 	return this->target;
 }
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const & src){
+    
+    *this = src;
+    return;
+}
+
+ShrubberyCreationForm & ShrubberyCreationForm::operator=(ShrubberyCreationForm const & rhs){
+
+	this->target = rhs.getSigne();
+    return *this;
+}
 
 void ShrubberyCreationForm::executeform(void)const{
 

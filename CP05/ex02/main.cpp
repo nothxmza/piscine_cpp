@@ -7,21 +7,18 @@
 int main(void)
 {
     
-	Bureaucrat supervisor("Supervisor", 100);
-	std::cout << supervisor << std::endl;
+	Bureaucrat supervisor("Supervisor", 10);
 	
 
 	Form *robot = new RobotomyRequestForm("Bender");
-	std::cout << *robot << std::endl;
 	robot->beSigned(supervisor);
 	robot->MethodeExec(supervisor);
 	//francis.executeForm(*robot);
 	//francis.executeForm(*robot);
-       
-
 
     try
 	{
+
 		RobotomyRequestForm robot = RobotomyRequestForm("Bender");
 		std::cout << robot << std::endl;
 		robot.MethodeExec(supervisor);

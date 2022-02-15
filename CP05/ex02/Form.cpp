@@ -19,6 +19,18 @@ Form::Form(std::string const name,int const gradeS,int const gradeE) : gradeS(gr
 	this->signe = 0;
 }
 
+Form::Form(Form const & src) :gradeS(1),gradeE(5){
+    
+    *this = src;
+    return;
+}
+
+Form & Form::operator=(Form const & rhs){
+
+	this->signe = rhs.getSigne();
+    return *this;
+}
+
 Form& Form::beSigned(Bureaucrat  & name){
 
 	if(gradeS > name.getGrade()){
@@ -39,7 +51,7 @@ void Form::MethodeExec(Bureaucrat const & executor)const{
 
 	if(getSigne() == 0)
 		throw Form::Nosigned();
-	if(getGradeS() < executor.getGrade())
+	if(getGradeS() > executor.getGrade())
 		throw Form::GradeTooLowException();
 	else{
 

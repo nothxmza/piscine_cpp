@@ -12,6 +12,8 @@ class  ShrubberyCreationForm : public Form{
 			virtual ~ShrubberyCreationForm(void);
 			virtual void executeform(void) const;
 			std::string getTarget(void)const;
+			ShrubberyCreationForm (ShrubberyCreationForm  const &src);
+			ShrubberyCreationForm  & operator=(ShrubberyCreationForm  const & rhs);
 
 		private:
 			std::string target;

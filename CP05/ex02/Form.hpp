@@ -10,6 +10,8 @@ class Form {
 		public:
 			Form(void);
 			Form(std::string const name,int const gradeS,int const gradeE);
+			Form (Form  const &src);
+			Form  & operator=(Form  const & rhs);
 			virtual ~Form(void);
 			std::string getName() const;
 			int getGradeS() const;

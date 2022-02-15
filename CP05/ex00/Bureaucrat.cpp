@@ -7,6 +7,18 @@ Bureaucrat::Bureaucrat(void){
     this->grade = 10;
 }
 
+Bureaucrat::Bureaucrat(Bureaucrat const & src) {
+    
+    *this = src;
+    return;
+}
+
+Bureaucrat & Bureaucrat::operator=(Bureaucrat const & rhs){
+
+    this->grade = rhs.getGrade();
+    return *this;
+}
+
 Bureaucrat::Bureaucrat(std::string const name,int note) : name(name){
 
 	std::cout <<"Bureaucrat constrcutor called" << std::endl;

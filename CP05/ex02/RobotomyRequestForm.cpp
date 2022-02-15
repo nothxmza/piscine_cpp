@@ -18,3 +18,15 @@ RobotomyRequestForm::~RobotomyRequestForm(void){};
 std::string RobotomyRequestForm::getTarget(void)const{
 	return this->target;
 }
+
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const & src){
+    
+    *this = src;
+    return;
+}
+
+RobotomyRequestForm & RobotomyRequestForm::operator=(RobotomyRequestForm const & rhs){
+
+	this->target = rhs.getSigne();
+    return *this;
+}
