@@ -8,4 +8,5 @@ int main(void)
 
     //b->makeSound();
     a->makeSound();
+    delete a;
 }

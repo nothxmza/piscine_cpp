@@ -1,6 +1,6 @@
 #include "Dog.hpp"
 
-Dog::Dog(void) : Animal(){
+Dog::Dog(void) : AAnimal(){
 
     std::cout << "Default constructor called : DOG" << std::endl;
     type = "Dog";
