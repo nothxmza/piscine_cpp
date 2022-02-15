@@ -2,7 +2,7 @@
 
 Animal::Animal(void){
 
-    std::cout << " default constructor called : ANIMAL" << std::endl;
+    std::cout << "Default constructor called : ANIMAL" << std::endl;
     
     return;
 }
@@ -17,7 +17,7 @@ Animal::Animal(Animal const & src) {
 
 Animal::~Animal(void){
 
-    std::cout << "Animal destructor called : ANIMAL" << std::endl;
+    std::cout << "Destructor called : ANIMAL" << std::endl;
     
     return;
 }
@@ -36,7 +36,7 @@ Animal & Animal::operator=(Animal const & rhs){
 }
 void Animal::makeSound(void) const{
 
-    std::cout <<"rrrrrr" << std::endl;
+    std::cout <<"Animal" << std::endl;
     
     return;
 }

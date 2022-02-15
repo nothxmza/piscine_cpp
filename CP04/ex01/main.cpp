@@ -7,7 +7,7 @@
 
 int main(void)
 {
-	const Animal*	obj[4];
+	/*const Animal*	obj[4];
 	for (int i = 0 ; i < 2 ; i++)
 	{
 		obj[i] = new Dog();
@@ -19,5 +19,9 @@ int main(void)
 	for (int i = 0 ; i < 4 ; i++)
 	{
 		delete obj[i];
+	}*/
+	Dog basic;
+	{
+		Dog tmp = basic;
 	}
 }

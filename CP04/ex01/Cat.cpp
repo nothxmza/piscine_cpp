@@ -1,6 +1,5 @@
 #include "Cat.hpp"
 
-
 Cat::Cat(void) : Animal(){
 
     std::cout << "Default constructor called : CAT" << std::endl;
@@ -19,7 +18,7 @@ Cat::Cat(Cat const & src) {
 
 Cat & Cat::operator=(Cat const & rhs){
 
-    std::cout << "operator called : CAT" << std::endl;
+    std::cout << "Operator called : CAT" << std::endl;
     this->brain = new Brain(*(rhs.brain));
 	this->type =rhs.getType();
 	return (*this);

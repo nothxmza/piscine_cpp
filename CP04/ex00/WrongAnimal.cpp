@@ -29,7 +29,7 @@ std::string WrongAnimal::getType(void) const{
 
 WrongAnimal & WrongAnimal::operator=(WrongAnimal const & rhs){
 
-    std::cout << "Assignment operator called" << std::endl;
+    std::cout << "Assignment WrongAnimal operator called" << std::endl;
     this->type = rhs.getType();
 
     return *this;

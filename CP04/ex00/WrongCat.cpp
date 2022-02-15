@@ -18,7 +18,7 @@ WrongCat::WrongCat(WrongCat const & src) {
 
 WrongCat & WrongCat::operator=(WrongCat const & rhs){
 
-    std::cout << "Assignment operator called" << std::endl;
+    std::cout << "Assignment WrongCat  operator called" << std::endl;
     this->type = rhs.getType();
 
     return *this;

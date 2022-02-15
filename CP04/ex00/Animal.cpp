@@ -36,7 +36,7 @@ Animal & Animal::operator=(Animal const & rhs){
 }
 void Animal::makeSound(void) const{
 
-    std::cout <<"rrrrrr" << std::endl;
+    std::cout <<"Animal" << std::endl;
     
     return;
 }
