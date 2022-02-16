@@ -4,29 +4,24 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 
-int main(void)
+int main()
 {
-    
-	Bureaucrat supervisor("Supervisor", 10);
-	
+	Bureaucrat supervisor("Supervisor", 100);
+	std::cout << supervisor << std::endl;
+	Form *pres = new ShrubberyCreationForm("Francis");
+	supervisor.signForm(*pres);
+	pres->MethodeExec(supervisor);
 
-	Form *robot = new RobotomyRequestForm("Bender");
-	robot->beSigned(supervisor);
-	robot->MethodeExec(supervisor);
-	//francis.executeForm(*robot);
-	//francis.executeForm(*robot);
-
-    try
+	try
 	{
-
-		RobotomyRequestForm robot = RobotomyRequestForm("Bender");
-		std::cout << robot << std::endl;
-		robot.MethodeExec(supervisor);
+		ShrubberyCreationForm *robot = new ShrubberyCreationForm("Bender");
+		robot->MethodeExec(supervisor);
 	}
 	catch(std::exception const &e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
+	delete pres;
 
-    delete robot;
+	return (0);
 }

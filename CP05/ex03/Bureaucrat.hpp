@@ -15,7 +15,6 @@ class Bureaucrat {
 		Bureaucrat(Bureaucrat const &src);
 		Bureaucrat & operator=(Bureaucrat const & rhs);
 
-
 		void incrementer(int nbr);
 		void decrementer(int nbr);
 		std::string getName(void) const;

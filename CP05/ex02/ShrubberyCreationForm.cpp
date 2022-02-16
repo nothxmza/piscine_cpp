@@ -15,23 +15,29 @@ std::string ShrubberyCreationForm::getTarget(void)const{
 ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const & src){
     
     *this = src;
-    return;
 }
 
 ShrubberyCreationForm & ShrubberyCreationForm::operator=(ShrubberyCreationForm const & rhs){
 
-	this->target = rhs.getSigne();
-    return *this;
+	this->target = rhs.target;
+	this->setSign(rhs.getSigne());
+	return (*this);
 }
 
-void ShrubberyCreationForm::executeform(void)const{
+bool ShrubberyCreationForm::executeform(void)const{
 
 	std::ofstream file;
 	std::string s1 = this->getTarget();
 	s1 += "_shrubbery";
 	file.open(s1);
-
-file << "     	   _-_     " << std::endl
+if (!(file.is_open()))
+	{
+		std::cout << "Can't create file." << std::endl;
+		return (false);
+	}
+	else
+	{
+		file << "     	   _-_     " << std::endl
    	<< "	    /~~   ~~\\  "<< std::endl
 	<< "	 /~~         ~~\\     "<<std::endl
 	<< "	 {               }     "<<std::endl
@@ -58,8 +64,8 @@ file << "     	   _-_     " << std::endl
   	<< "    _- -   | | _- _		"<<std::endl
 	<< "      _ -  | |   -_		"<<std::endl
     << "          // \\			"<<std::endl;
-
-file.close();
+	return true;
+	}
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm(void){

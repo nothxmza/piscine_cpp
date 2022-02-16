@@ -13,7 +13,7 @@ class RobotomyRequestForm: public Form{
 		RobotomyRequestForm  & operator=(RobotomyRequestForm  const & rhs);
 		virtual ~RobotomyRequestForm(void);
 		std::string getTarget(void)const;
-		virtual void executeform(void)const;
+		virtual bool  executeform(void) const;
 
 
 

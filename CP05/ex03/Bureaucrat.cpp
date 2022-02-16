@@ -1,10 +1,9 @@
 #include "Bureaucrat.hpp"
 
 
-Bureaucrat::Bureaucrat(void){
+Bureaucrat::Bureaucrat(void): name("defaultBureaucrat"){
 
    // std::cout <<"Bureaucrat default constructor called" << std::endl;
-    this->grade = 10;
 }
 
 Bureaucrat::Bureaucrat(std::string const name,int note) : name(name){
@@ -19,6 +18,12 @@ Bureaucrat::Bureaucrat(std::string const name,int note) : name(name){
     this->grade = note;
 }
 
+Bureaucrat::~Bureaucrat(void){
+
+   // std::cout <<"Bureaucrat destructor called" << std::endl;
+   ;
+}
+
 Bureaucrat::Bureaucrat(Bureaucrat const & src) {
     
     *this = src;
@@ -30,13 +35,6 @@ Bureaucrat & Bureaucrat::operator=(Bureaucrat const & rhs){
     this->grade = rhs.getGrade();
     return *this;
 }
-
-Bureaucrat::~Bureaucrat(void){
-
-   // std::cout <<"Bureaucrat destructor called" << std::endl;
-   ;
-}
-
 void Bureaucrat::incrementer(int nbr){
 
     int j = this->grade - nbr;
@@ -65,26 +63,47 @@ std::string Bureaucrat::getName(void) const{
     return this->name;
 }
 
-void Bureaucrat::signForm(Form  & name){
-
-    if(name.getSigne() == 1){
-		std::cout << this->getName() << " signs " << name.getName() << std::endl;
+void		Bureaucrat::signForm(Form & rhs)
+{
+	if (rhs.getSigne())
+	{
+		std::cout << this->getName() << " cannot sign " << rhs.getName()
+				<< " because the form is already signed." << std::endl;
 	}
-	else if(name.getSigne() == 0){
-		std::cout << this->getName() << " cannot sign because " << this->getGrade() << " is to low" << std::endl;
+	else if (rhs.getGradeS() < this->getGrade())
+	{
+		std::cout << this->getName() << " cannot sign " << rhs.getName()
+				<< " because it's grade is too low." << std::endl;
 	}
+	else
+	{
+		std::cout << this->getName() << " signs " << rhs.getName() << std::endl;
+	}
+	rhs.beSigned(*this);
 }
 
 void Bureaucrat::executeForm(Form const & form){
 
-    form.executeform();
+    if (!form.getSigne())
+	{
+		std::cout << this->getName() << " cannot execute " << form.getName()
+				<< " because the form is unsigned." << std::endl;
+	}
+	else if (form.getGradeE() < this->getGrade())
+	{
+		std::cout << this->getName() << " cannot execute " << form.getName()
+				<< " because it's grade is too low." << std::endl;
+	}
+	else
+	{
+		std::cout << this->getName() << " executes " << form.getName() << std::endl;
+	}
+    form.MethodeExec(*this);
 }
 
 
 std::ostream & operator<<(std::ostream & o, Bureaucrat const & rhs){
 
-    o << rhs.getName();
-    std::cout <<" bureaucrat grade ";
-    o << rhs.getGrade();
+    std::cout << rhs.getName() << ", bureaucrat grade " << rhs.getGrade() << ".";
     return(o);
 }

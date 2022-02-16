@@ -10,7 +10,7 @@ class Form {
 		public:
 			Form(void);
 			Form(std::string const name,int const gradeS,int const gradeE);
-			~Form(void);
+			virtual~Form(void);
 			std::string getName() const;
 			int getGradeS() const;
 			int getGradeE() const;

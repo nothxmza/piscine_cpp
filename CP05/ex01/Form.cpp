@@ -21,7 +21,7 @@ Form::Form(std::string const name,int const gradeS,int const gradeE) :gradeS(gra
 	this->signe = 0;
 }
 
-Form::Form(Form const & src) :gradeS(1),gradeE(5){
+Form::Form(Form const & src) :gradeS(getGradeS()),gradeE(getGradeE()){
     
     *this = src;
     return;
@@ -37,7 +37,7 @@ Form& Form::beSigned(Bureaucrat  & name){
 
 	if(gradeS > name.getGrade()){
 
-		this->signe = 1;
+		this->signe = true;
 		name.signForm(*this);
 	}
 	else if(gradeS < name.getGrade()){
@@ -66,18 +66,7 @@ bool Form::getSigne(void) const{
 }
 
 std::ostream & operator<<(std::ostream & o, Form const & rhs){
-
-		std::cout <<"name ";
-		o << rhs.getName();
-		if(rhs.getSigne() == 1){
-			std::cout <<" signed ";
-		}
-		else if(rhs.getSigne() == 0){
-			std::cout <<" non signee ";
-		}
-		std::cout <<"grade requis pour le signer ";
-		o << rhs.getGradeS();
-		std::cout <<" grade requis pour l'executer  ";
-		o << rhs.getGradeE() << "."<< std::endl;
-		return(o);
+	
+	std::cout << "Form " << rhs.getName() << ", signed : " << rhs.getSigne() << ", grade required for sign " << rhs.getGradeS() << ", grade required for execute " << rhs.getGradeE() << ".";
+	return(o);
 }

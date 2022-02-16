@@ -1,28 +1,28 @@
-#ifndef INTERN_HPP
-# define INTERN_HPP
+#pragma once
+#ifndef INTERN_H
 
 #include <iostream>
-#include "Form.hpp"
 #include <string>
+#include "Form.hpp"
 
-class Intern{
+class Intern
+{
+	public:
+		Intern(void);
+		Intern(const Intern & rhs);
+		~Intern(void);
 
-        public:
-            Intern(void){};
-            ~Intern(){};
-            Form* makeForm(std::string name,std::string target);
-            
-            class NotGoodName : public std::exception
-            {
-                public:
-                    virtual const char * wath () const throw ()
-                    {
-                        return("Bad name");
-                    }
-            };
+		Form*	makeForm(std::string name, std::string target);
 
+		Intern&	operator=( Intern const & rhs );
 
-
+		class BadNameException : public std::exception
+		{
+			virtual const char*	what( void ) const throw()
+			{
+				return ("Intern: Bad name");
+			}
+		};
 };
 
 #endif

@@ -7,14 +7,18 @@
 
 int main(void)
 {
-		
-	Intern  someRandomIntern;
-	Form*   rrf;
-	rrf = someRandomIntern.makeForm("shrubbery creation", "Bender");
-	rrf = someRandomIntern.makeForm("robotomy request", "Bender");
-	rrf = someRandomIntern.makeForm("presidential pardon", "Bender");
-	rrf = someRandomIntern.makeForm("pr", "Bender");
+	std::cout << "=== Intern Tests ===" << std::endl;
+	Bureaucrat hz("hz", 1);
 
+	Intern	vo;
+	Form*	rrf;
+
+	rrf = vo.makeForm("shrubbery creation", "maison");
+	std::cout << *rrf << std::endl;
+	rrf->beSigned(hz);
+	std::cout << *rrf << std::endl;
+	hz.executeForm(*rrf);
 
 	delete rrf;
+	return (0);
 }

@@ -8,11 +8,6 @@ RobotomyRequestForm::RobotomyRequestForm(std::string target): Form("a31",72,45){
     this->target = target;
 }
 
-void RobotomyRequestForm::executeform(void) const{
-
-    std::cout <<"bruit de perceuses " << this->getTarget() << " a bien ete robotomizee dans 50% des cas, ou son echec le reste du temps." << std::endl;
-}
-
 RobotomyRequestForm::~RobotomyRequestForm(void){};
 
 std::string RobotomyRequestForm::getTarget(void)const{
@@ -22,11 +17,22 @@ std::string RobotomyRequestForm::getTarget(void)const{
 RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const & src){
     
     *this = src;
-    return;
 }
 
 RobotomyRequestForm & RobotomyRequestForm::operator=(RobotomyRequestForm const & rhs){
 
-	this->target = rhs.getSigne();
+	this->target = rhs.target;
+    this->setSign(rhs.getSigne());
     return *this;
+}
+bool    RobotomyRequestForm::executeform() const
+{
+	int		random = rand() % 100 + 1;
+
+	std::cout << "* BRRRRRRR *" << std::endl;
+	if (random >= 50)
+		std::cout << this->target << " has been robotomized successfully" << std::endl;
+	else
+		std::cout << "Robotomy failed" << std::endl;
+	return true;
 }

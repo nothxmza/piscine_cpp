@@ -63,21 +63,17 @@ std::string Bureaucrat::getName(void) const{
     return this->name;
 }
 
-void Bureaucrat::signForm(Form  & name){
-
-    if(name.getSigne() == 1){
-		std::cout << this->getName() << " signs " << name.getName() << std::endl;
-	}
-	else if(name.getSigne() == 0){
-		std::cout << this->getName() << "  couldn’t sign " << name.getName() << " because grade is to low" << std::endl;
-	}
+void		Bureaucrat::signForm(Form & rhs)
+{
+	if (rhs.getSigne() == false)
+		std::cout << this->getName() << " cannot sign because " << this->getGrade() << " is too low." << std::endl;
+	else
+		std::cout << this->getName() << " signs " << rhs.getName() << std::endl; 
 }
 
 
 std::ostream & operator<<(std::ostream & o, Bureaucrat const & rhs){
 
-    o << rhs.getName();
-    std::cout <<" bureaucrat grade ";
-    o << rhs.getGrade();
+    std::cout << rhs.getName() << ", bureaucrat grade " << rhs.getGrade() << ".";
     return(o);
 }

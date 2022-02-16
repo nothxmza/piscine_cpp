@@ -16,10 +16,13 @@ class Form {
 			std::string getName() const;
 			int getGradeS() const;
 			int getGradeE() const;
+
+			void		setSign(bool sign);
+			
 			bool getSigne() const;
-			Form& beSigned(Bureaucrat  & name);
+			void			beSigned(Bureaucrat & rhs);
 			void MethodeExec(Bureaucrat const & executor)const;
-			virtual void executeform(void) const = 0 ;
+			virtual bool  executeform(void) const = 0 ;
 
 		class GradeTooHighException : public std::exception
 		{
@@ -51,8 +54,6 @@ class Form {
 			int const gradeE;
 			std::string const name;
 			bool signe;
-
-
 
 };
 std::ostream & operator<<(std::ostream & o, Form const & rhs);
