@@ -1,8 +1,5 @@
 #include <iostream>
 #include <stdlib.h>
-#include <sstream>
-
-std::string::size_type sz;
 
 void convert_char(double n)
 {
@@ -22,7 +19,7 @@ void convert_char(double n)
 
 void convert_int(double n)
 {
-    if(n > INT_MAX || n < INT_MIN)
+    if(n > INT_MAX || n < INT_MIN || n!=n)
     {
         std::cout << "impossible" << std::endl;
         return;
@@ -33,7 +30,10 @@ void convert_int(double n)
 
 void convert_double(double n)
 {
-    std::cout<< n << std::endl;
+    if ((n - static_cast<int>(n)==0))
+		std::cout << n << ".0" <<std::endl;
+	else
+		std::cout << n << std::endl;
 }
 
 void convert_float(double n)
@@ -44,17 +44,22 @@ void convert_float(double n)
 		std::cout << "nanf" << std::endl;
 		return ;
 	}
-    std::cout << nbr << std::endl;
+    if ((nbr - static_cast<int>(nbr) == 0))
+		std::cout << nbr << ".0f" <<std::endl;
+	else
+		std::cout << nbr << "f" << std::endl;
 }
+
 int main(int argc,char **argv)
 {
     double i;
     if(argc == 2)
     {
-
         std::string s1 = argv[1];
-        
-			try 
+        if (argv[1][0] && !(argv[1][1]) && (argv[1][0] < '0' || argv[1][0] > '9'))
+			i = static_cast<double>(argv[1][0]);
+        else{
+            try 
 			{
 				 i = std::atof(s1.c_str());
 			}
@@ -63,15 +68,16 @@ int main(int argc,char **argv)
 				std::cerr << e.what() << std::endl;
 				return (0);
 			}
-		
+        }	
+		std::cout << "char: ";
         convert_char(i);
+        std::cout << "int: ";
         convert_int(i);
-        convert_double(i);
+        std::cout << "float: ";
         convert_float(i);
+        std::cout << "double: ";
+        convert_double(i);
     }
     else
         std::cout <<"error: number of arguments invalid." <<std::endl;
-   
 }
-
-        
