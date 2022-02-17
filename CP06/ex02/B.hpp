@@ -7,15 +7,7 @@ class B : public Base
 {
 	public:
 		B(void){};
-		B(B const & rhs){
-            *this = rhs;
-        }
 		virtual ~B(void){};
-
-		B&	operator=(B const & rhs){
-            (void)rhs;
-            return(*this);
-        }
 };
 
 #endif

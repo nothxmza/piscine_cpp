@@ -1,13 +1,13 @@
 #include "Serialisation.hpp"
 
-uintptr_t	serialize(Data* ptr)
+uintptr_t	serialize(Data* nbr)
 {
-	return (reinterpret_cast<uintptr_t>(ptr));
+	return (reinterpret_cast<uintptr_t>(nbr));
 }
 
-Data*		deserialize(uintptr_t raw)
+Data*		deserialize(uintptr_t nbr)
 {
-	return (reinterpret_cast<Data *>(raw));
+	return (reinterpret_cast<Data *>(nbr));
 }
 
 int	main(void)
@@ -21,5 +21,5 @@ int	main(void)
 	std::cout << "Ptr data : " << data << std::endl;
 	serialized = serialize(data);
 	deserialized = deserialize(serialized);
-	std::cout << "ptr converted : " << deserialized << std::endl;
+	std::cout << "Ptr converted : " << deserialized << std::endl;
 }

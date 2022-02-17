@@ -1,4 +1,4 @@
-NAME =		convert
+NAME =		Sérialisation
 
 CXXFLAGS +=	-Wall -Wextra -Werror -std=c++98
 
