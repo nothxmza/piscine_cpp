@@ -39,11 +39,6 @@ void convert_double(double n)
 void convert_float(double n)
 {
     float nbr = static_cast<float>(n);
-    if (n != n)
-	{
-		std::cout << "nanf" << std::endl;
-		return ;
-	}
     if ((nbr - static_cast<int>(nbr) == 0))
 		std::cout << nbr << ".0f" <<std::endl;
 	else
